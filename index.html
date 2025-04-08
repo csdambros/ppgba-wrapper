@@ -6,7 +6,7 @@
   <script>
     async function redirectToLatestApp() {
       try {
-        const response = await fetch("https://drive.google.com/uc?export=download&id=1SCfpnqE232wTpUQc_QTluJv02J7X5QuC");
+        const response = await fetch("https://drive.google.com/file/d/1SCfpnqE232wTpUQc_QTluJv02J7X5QuC/view?usp=drivesdk");
         const url = await response.text();
         window.location.replace(url.trim());
       } catch (e) {
