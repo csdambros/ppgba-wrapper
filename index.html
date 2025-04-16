@@ -44,8 +44,14 @@
   </div>
 
   <script>
-    const redirectUrl = "https://script.google.com/macros/s/AKfycbx1ouJKmEK-LWgpfA6-C0OlT61UMnFGN53BNRU97h0Y-x3adjklC9c95TS3oUykq1hu/exec"; // <-- seu link
+    const baseUrl = "https://script.google.com/macros/s/AKfycbx1ouJKmEK-LWgpfA6-C0OlT61UMnFGN53BNRU97h0Y-x3adjklC9c95TS3oUykq1hu/exec"; // <-- seu link
 
+  // Capture query string from current URL
+  const query = window.location.search; // includes the "?" already
+
+  // Build the final redirect URL
+  const redirectUrl = baseUrl + query;
+   
     // (Opcional) Faz um ping para "acordar" a app antes de redirecionar
     fetch(redirectUrl, { method: 'HEAD', mode: 'no-cors' })
       .catch(() => {}) // ignora erros CORS
